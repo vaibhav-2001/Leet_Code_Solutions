@@ -62,17 +62,17 @@ class Solution
 
             // 3) Optimal:-
 
-            // int n = mat.size();
-            // int m = mat[0].size();
+            int n = mat.size();
+            int m = mat[0].size();
 
             int low = 0;
-            int high = mat.size() * mat[0].size() - 1;
+            int high = n * m - 1;
 
             while(low <= high)
             {
                 int mid = low + (high - low) / 2;
-                if(mat[mid / mat[0].size()][mid % mat[0].size()] == target) return true;
-                else if(mat[mid / mat[0].size()][mid % mat[0].size()] > target) 
+                if(mat[mid / m][mid % m] == target) return true;
+                else if(mat[mid / m][mid % m] > target) 
                 {
                     high = mid - 1;
                 }
